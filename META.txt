@@ -1,0 +1,12 @@
+[Program]
+Name= iptables-dynamic
+VERSION= 0.2.0
+TAG=0.2.0
+Description= Dynamically save and restore iptables rules for some chain(s) 
+License= BSD 3-clause
+URL= https://github.com/aalireza/iptables-dynamic
+
+[Copyright]
+Owner_Name= Regents of the University of California
+Author_Name= Alireza Rafiei (aalireza)
+Author_Email= mail@rafiei.net
