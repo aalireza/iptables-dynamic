@@ -1,7 +1,7 @@
 [Program]
 Name= iptables-dynamic
-VERSION= 0.2.0
-TAG=0.2.0
+VERSION= 0.2.1
+TAG=0.2.1
 Description= Dynamically save and restore iptables rules for some chain(s) 
 License= BSD 3-clause
 URL= https://github.com/aalireza/iptables-dynamic
