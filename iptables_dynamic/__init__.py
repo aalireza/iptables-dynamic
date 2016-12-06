@@ -212,10 +212,12 @@ def argument_handler():
 
     Raises
     ------
-    TypeError       If user tries to restore a rule file based on new chains.
+    Exception       If user tries to restore a rule file based on new chains.
                     The intended use case is to selectively save a rule file
                     based on an arbitrary chain and restore the save version
                     in its entirety.
+    Exception       If user tries to save a rule file but doesn't spacify at
+                    least one chain.
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--chains",
@@ -229,9 +231,13 @@ def argument_handler():
                            help="Restore the rules", action='store_true')
     args = parser.parse_args()
     if args.restore and args.chains:
-        raise TypeError("Can't selectively restore a rule file. You should " +
+        raise Exception("Can't selectively restore a rule file. You should " +
                         "instead selectively save a rule file and restore it" +
                         " in its entirety.")
+    if args.save and not args.chains:
+        raise Exception("Must choose a chain to selectivly save the rules. " +
+                        "Use regular iptables-save if no specific is needed " +
+                        "to be saved")
     return (args.save, args.restore, args.chains)
 
 
