@@ -7,7 +7,7 @@ here = path.abspath(path.dirname(__file__))
 meta_parser = ConfigParser.RawConfigParser()
 meta_parser.read(path.join(here, 'META.txt'))
 
-with codecs.open(path.join(here, 'README.rst'), "rb", "utf-8") as f:
+with codecs.open(path.join(here, 'README.rst'), "r") as f:
     long_description = f.read()
 
 
@@ -36,12 +36,11 @@ setup(
         "Topic :: Utilities",
         "License :: OSI Approved :: BSD License",
         "Operating System :: POSIX :: Linux",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6'
     ],
     keywords=["iptables", "save chain", "restore chain"],
     entry_points={
