@@ -48,13 +48,14 @@ One may also use ``ip6tables-dynamic`` for IPv6.
 Use case example
 ++++++++++++++++
 
-When there's an iptables service restart, all of the docker rules gets wiped out. You may edit your iptables' systemd unit files to call below at `ExecStopPre` 
+When there's an iptables service restart, all of the docker rules gets wiped out. The make the rules persist through
+a service restart, you may edit your iptables' systemd unit files to call below at `ExecStopPre`: 
 
 ::
 
   iptables-dynamic --chains DOCKER --save
 
-and to call below at `ExecStartPost` 
+and call below at `ExecStartPost`:
 
 ::
 
