@@ -6,7 +6,7 @@ Dynamically save and restore iptables rules for some chain(s)
 - `Dependencies <#dependencies>`_
 - `Installation <#installation>`_
 - `Usage <#usage>`_
-- `Credits <#credits>`_
+- `License <#license>`_
 
 What does it do?
 ----------------
@@ -62,8 +62,8 @@ and to call below at `ExecStartPost`
 
 
 
-Credits
+License
 --------
-The copyright owner is `Regents of the University of California <http://regents.universityofcalifornia.edu/>`_ and this script is published under a `BSD 3-Clause <https://github.com/aalireza/iptables-dynamic/blob/master/LICENSE>`_ license. 
+The copyright owner is `Regents of the University of California <http://regents.universityofcalifornia.edu/>`_ and this script is published under a `BSD 3-Clause <LICENSE>`_ license. 
 
 Developed at `UCSB LSIT <http://www.lsit.ucsb.edu/>`_
