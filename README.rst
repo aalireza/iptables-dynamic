@@ -2,21 +2,23 @@ iptables-dynamic
 ================
 Dynamically save and restore iptables rules for some chain(s)
 
-- `Description <#description>`_
+- `What does it do? <#what-does-it-do>`_
 - `Dependencies <#dependencies>`_
 - `Installation <#installation>`_
 - `Usage <#usage>`_
 - `Credits <#credits>`_
 
-Description
------------
-When there's an iptables service restart, all of the docker rules gets wiped out. This script was written to dynamically save and restore iptables rules pertaining to some chain(s) and make them persist.
+What does it do?
+----------------
+`iptables-dynamic` parses the output of `iptables-save` to dynamically save and restore rules for some chain(s).
+
 
 
 Dependencies
 ------------
 
 - ``iptables`` (Must have the commands ``iptables-save`` and ``iptables-restore`` commands available)
+- At least, Python 2.7
 
 Installation
 -------------
@@ -41,6 +43,23 @@ One can restore those rules by
   iptables-dynamic --restore
 
 One may also use ``ip6tables-dynamic`` for IPv6.
+
+
+Use case example
+++++++++++++++++
+
+When there's an iptables service restart, all of the docker rules gets wiped out. You may edit your iptables' systemd unit files to call below at `ExecStopPre` 
+
+::
+
+  iptables-dynamic --chains DOCKER --save
+
+and to call below at `ExecStartPost` 
+
+::
+
+  iptables-dynamic --restore
+
 
 
 Credits
